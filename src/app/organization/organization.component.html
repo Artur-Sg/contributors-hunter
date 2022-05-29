@@ -1,4 +1,4 @@
-<div *ngIf="organization">
+<div *ngIf="organization; else notFound">
   <div class="organization__card">
     <div>
       <img class="organization__image" [src]="organization.avatar_url" alt="Avatar" />
@@ -43,3 +43,5 @@
     [organization]="{ name: organization.name ??  organization.login, link: organization.html_url }"
   ></app-members>
 </div>
+
+<ng-template #notFound><h1 class="error">Organization not found</h1></ng-template>
