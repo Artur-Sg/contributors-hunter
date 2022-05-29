@@ -1,0 +1,6 @@
+<div *ngIf="repos.length; else reposNotFound" class="repos-container">
+  <h1 class="title">Organization Repositories</h1>
+  <app-repo *ngFor="let repo of repos" [repo]="repo" [organization]="organization"></app-repo>
+</div>
+
+<ng-template #reposNotFound><h1 class="title">Repositories not found</h1></ng-template>

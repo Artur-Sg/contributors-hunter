@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class SearchService {
-  searchValue$ = new BehaviorSubject('');
+  searchValue$ = new BehaviorSubject({ value: '', isExact: false });
 
   get searchValue() {
     return this.searchValue$.value;

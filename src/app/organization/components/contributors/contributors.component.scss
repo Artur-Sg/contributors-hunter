@@ -1,0 +1,32 @@
+.contributor {
+  &__image {
+    width: 100px;
+    max-width: 100px;
+    height: auto;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px #0000003d;
+    border-radius: 50px;
+    margin: 5px;
+  }
+
+  &__table {
+    width: 90%;
+    margin: 2em auto 7em auto;
+  }
+
+  &__icon {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__actions {
+    width: 40%;
+    max-width: 40%;
+  }
+}
+
+.error-message {
+  margin: 1em;
+  text-align: center;
+}

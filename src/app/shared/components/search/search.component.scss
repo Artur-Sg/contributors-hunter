@@ -1,5 +1,15 @@
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: medium;
+}
+
+.search-slider {
+  margin-right: 1em;
+  font-weight: normal;
+}
+
 .search-field {
   width: 300px;
-  font-size: medium;
   margin-top: 20px;
 }

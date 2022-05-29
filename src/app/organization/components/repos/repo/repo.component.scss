@@ -1,0 +1,17 @@
+.repo .mat-expansion-panel-header-title,
+.repo .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.repo .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repo .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.repo .mat-expansion-panel-header-title {
+  font-weight: bold;
+}

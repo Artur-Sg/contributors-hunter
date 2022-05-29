@@ -6,6 +6,8 @@ import { environment } from '../../../../environments/environment';
 import { organizationDefinitionMock } from '../../../../tests/mocks/organization-definition';
 import { publicMemberMock } from '../../../../tests/mocks/public-member';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { reposMock } from '../../../../tests/mocks/repos';
+import { contributorMock } from '../../../../tests/mocks/contributor';
 
 describe('RestApiService', () => {
   let service: RestApiService;
@@ -85,6 +87,36 @@ describe('RestApiService', () => {
     });
 
     req.flush([publicMemberMock]);
+  });
+
+  it('should return organization repositories by login', () => {
+    const login = 'login';
+
+    service.getOrganizationRepos(login).subscribe(res => {
+      expect(res).toEqual([reposMock]);
+    });
+
+    const req = httpController.expectOne({
+      method: 'GET',
+      url: `${environment.baseUrl}/orgs/${login}/repos`,
+    });
+
+    req.flush([reposMock]);
+  });
+
+  it('should return contributors', () => {
+    const url = `${environment.baseUrl}/repos/Test_Org/Test_Repo/contributors`;
+
+    service.getContributors(url).subscribe(res => {
+      expect(res).toEqual([contributorMock]);
+    });
+
+    const req = httpController.expectOne({
+      method: 'GET',
+      url: `${environment.baseUrl}/repos/Test_Org/Test_Repo/contributors`,
+    });
+
+    req.flush([contributorMock]);
   });
 
   it('should throw 404 error', () => {

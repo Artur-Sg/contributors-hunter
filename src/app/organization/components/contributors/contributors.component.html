@@ -1,8 +1,13 @@
-<table mat-table [dataSource]="dataSource" class="member__table mat-elevation-z8">
+<table
+  *ngIf="dataSource.length; else noFound"
+  mat-table
+  [dataSource]="dataSource"
+  class="contributor__table mat-elevation-z8"
+>
   <ng-container matColumnDef="avatar">
     <th mat-header-cell *matHeaderCellDef>Avatar</th>
     <td mat-cell *matCellDef="let element">
-      <img class="member__image" [src]="element.avatar_url" alt="Avatar" />
+      <img class="contributor__image" [src]="element.avatar_url" alt="Avatar" />
     </td>
   </ng-container>
 
@@ -14,15 +19,22 @@
   <ng-container matColumnDef="github">
     <th mat-header-cell *matHeaderCellDef>GitHub</th>
     <td mat-cell *matCellDef="let element">
-      <a class="member__icon" [href]="element.html_url" title="GitHub account" target="_blank"
+      <a class="contributor__icon" [href]="element.html_url" title="GitHub account" target="_blank"
         ><app-github-icon></app-github-icon
       ></a>
     </td>
   </ng-container>
 
+  <ng-container matColumnDef="contributions">
+    <th mat-header-cell *matHeaderCellDef>Contributions</th>
+    <td mat-cell *matCellDef="let element">
+      <p>{{ element.contributions }}</p>
+    </td>
+  </ng-container>
+
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Actions</th>
-    <td mat-cell *matCellDef="let element" class="member__actions">
+    <td mat-cell *matCellDef="let element" class="contributor__actions">
       <a [disabled]="element.is_favorite" mat-button color="primary" title="Add to favorites" (click)="add(element)"
         >Add to favorites</a
       >
@@ -35,3 +47,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+
+<ng-template #noFound><h1 class="error-message">Contributors not found</h1></ng-template>

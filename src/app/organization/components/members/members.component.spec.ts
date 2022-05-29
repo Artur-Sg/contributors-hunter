@@ -1,9 +1,9 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FavoritesStorageServiceStub } from '../../../tests/stubs/favorites-storage-service';
-import { RestApiServiceStub } from '../../../tests/stubs/rest-api-service';
-import { FavoritesStorageService } from '../../shared/services/favorites-storage/favorites-storage.service';
-import { RestApiService } from '../../shared/services/rest-api/rest-api.service';
+import { FavoritesStorageServiceStub } from '../../../../tests/stubs/favorites-storage-service';
+import { RestApiServiceStub } from '../../../../tests/stubs/rest-api-service';
+import { FavoritesStorageService } from '../../../shared/services/favorites-storage/favorites-storage.service';
+import { RestApiService } from '../../../shared/services/rest-api/rest-api.service';
 import { MembersComponent } from './members.component';
 
 describe('MembersComponent', () => {

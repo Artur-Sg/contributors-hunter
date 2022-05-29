@@ -1,14 +1,18 @@
-<mat-form-field class="search-field" appearance="fill">
-  <mat-label>Search organization</mat-label>
-  <input matInput type="text" [(ngModel)]="value" (keydown.enter)="search()" />
-  <button
-    *ngIf="value"
-    matSuffix
-    mat-icon-button
-    [aria-label]="clearTitle"
-    [title]="clearTitle"
-    (click)="resetSearch()"
-  >
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
+<div class="search-wrapper">
+  <mat-slide-toggle class="search-slider" color="accent" [(ngModel)]="isExact">Exact</mat-slide-toggle>
+
+  <mat-form-field class="search-field" appearance="fill">
+    <mat-label>Search organization</mat-label>
+    <input matInput type="text" [(ngModel)]="value" (keydown.enter)="search()" />
+    <button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      [aria-label]="clearTitle"
+      [title]="clearTitle"
+      (click)="resetSearch()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>

@@ -34,6 +34,10 @@
       >
     </div>
   </div>
+  <app-repos
+    [login]="login"
+    [organization]="{ name: organization.name ??  organization.login, link: organization.html_url }"
+  ></app-repos>
   <app-members
     [login]="login"
     [organization]="{ name: organization.name ??  organization.login, link: organization.html_url }"

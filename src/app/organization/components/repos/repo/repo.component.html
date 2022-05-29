@@ -1,0 +1,13 @@
+<mat-accordion class="repo">
+  <mat-expansion-panel (opened)="panelOpenState = true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ repo.name }}</mat-panel-title>
+      <mat-panel-description class="description">{{ repo.description }}</mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-contributors
+      [url]="repo.contributors_url"
+      [organization]="organization"
+      [isAccordionOpen]="panelOpenState"
+    ></app-contributors>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,6 +1,13 @@
 # Contributors Hunter (Test assignment)
 
-Application which have the possibility to peek the contributors of the repositories of the arbitrary public GitHub organization.
+Application allows to peek the contributors of the repositories of the arbitrary public GitHub organization.
+
+# Application description
+
+The main page consists of available organizations.
+User can search upon organizations and pick one. If organization name is well-known it's possible to toggle search to 'exact search mode'. In this mode user redirects to organization page right away after enter organization name into input search field.
+On the organization page is possible to observe main information, repositories, contributors and members of the organization.
+User is able to add members to favorite list. Favorites page available on clicking heart icon on the top right window corner. It's also possible to remove members from favorites.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
