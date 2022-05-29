@@ -15,3 +15,8 @@
 .repo .mat-expansion-panel-header-title {
   font-weight: bold;
 }
+
+.repo .mat-expansion-panel-header {
+  height: fit-content;
+  padding: 1em;
+}
