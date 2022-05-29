@@ -1,7 +1,10 @@
 <div class="dashboard">
   <div class="dashboard__container">
     <div class="dashboard__search-title" *ngIf="this.searchService.searchValue">
-      <h1>Search results for "{{ this.searchService.searchValue }}". Found {{ total }} organizations:</h1>
+      <h1 *ngIf="total; else notFound">
+        Search results for "{{ this.searchService.searchValue }}". Found {{ total }} organizations:
+      </h1>
+      <ng-template #notFound><h1>Organization not found</h1></ng-template>
     </div>
     <app-item *ngFor="let organization of organizations" [orgDefinition]="organization"></app-item>
   </div>

@@ -16,6 +16,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## GitHub Pages deployment
+
+Directory `.github/workflows` consists of `workflow.yml` file which runs gh-build script and deploys app.
+Application is available at https://artur-sg.github.io/contributors-hunter/
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
