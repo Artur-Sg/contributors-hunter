@@ -1,0 +1,21 @@
+.dashboard {
+  margin-bottom: 64px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    max-width: 75vw;
+    height: 80vh;
+    overflow-y: scroll;
+    margin: auto;
+  }
+
+  &__search-title {
+    flex: 100% 0 0;
+    margin-top: 1em;
+    text-align: center;
+    font-size: medium;
+  }
+}

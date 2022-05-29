@@ -1,0 +1,16 @@
+<header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>
+        <ng-content select="[header-logo]"></ng-content>
+      </span>
+      <span class="spacer"></span>
+      <span class="p-2">
+        <ng-content select="[search]"></ng-content>
+      </span>
+      <span
+        ><a [routerLink]="routerLink" class="link" title="Go to favorites list"><mat-icon>favorite</mat-icon></a></span
+      >
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

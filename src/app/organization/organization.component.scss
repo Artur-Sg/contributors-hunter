@@ -1,0 +1,62 @@
+.organization {
+  display: flex;
+  flex-direction: row;
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+    height: 300px;
+    max-height: 300px;
+    padding: 1em;
+    margin: 1em auto;
+    box-shadow: #0000003d 0px 3px 8px;
+    border-radius: 10px;
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+  }
+
+  &__image {
+    width: 200px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  &__icon {
+    text-decoration: none;
+    color: inherit;
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  &__button-container {
+    margin-top: 1em;
+    width: 100%;
+  }
+
+  &__contributors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.back-button {
+  border: 1px solid #ff4081;
+}

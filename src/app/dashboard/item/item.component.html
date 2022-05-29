@@ -1,0 +1,13 @@
+<mat-card class="item" *ngIf="orgDefinition">
+  <a [routerLink]="routerLink" class="item__link"
+    ><mat-card-header>
+      <mat-card-title [title]="orgDefinition.login" class="item__title">{{ orgDefinition.login }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="orgDefinition.avatar_url" alt="Organization Avatar"
+  /></a>
+  <mat-card-actions>
+    <a mat-button target="_blank" title="Open {{ orgDefinition.login }} GitHub page" [href]="orgDefinition.html_url"
+      >Homepage</a
+    >
+  </mat-card-actions>
+</mat-card>

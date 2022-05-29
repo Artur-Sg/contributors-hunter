@@ -1,0 +1,41 @@
+<div *ngIf="organization">
+  <div class="organization__card">
+    <div>
+      <img class="organization__image" [src]="organization.avatar_url" alt="Avatar" />
+    </div>
+    <div class="organization__information">
+      <h1>
+        {{ organization.name ??  organization.login }}
+        <mat-icon *ngIf="organization.is_verified" [ngStyle]="{ color: 'green' }">check_circle</mat-icon>
+      </h1>
+      <p *ngIf="organization.description">{{ organization.description }}</p>
+      <p *ngIf="organization.company || organization.location">
+        {{ organization.company }} {{ organization.location }}
+      </p>
+      <p>
+        Created: {{ organization.created_at | date: 'longDate' }} | Updated:
+        {{ organization.updated_at | date: 'longDate' }}
+      </p>
+      <div class="organization__icon-wrapper">
+        <a class="organization__icon" [href]="organization.html_url" title="GitHub account" target="_blank"
+          ><app-github-icon></app-github-icon
+        ></a>
+        <a *ngIf="organization.blog" class="organization__icon" target="_blank" title="Blog" [href]="organization.blog"
+          ><mat-icon>account_circle</mat-icon></a
+        >
+        <a *ngIf="organization.email" class="organization__icon" title="Email" href="mailto:{{ organization.email }}"
+          ><mat-icon>email</mat-icon></a
+        >
+      </div>
+    </div>
+    <div class="organization__button-container">
+      <a mat-button color="accent" class="back-button" title="Go back to organizations list" (click)="back()"
+        >Go Back</a
+      >
+    </div>
+  </div>
+  <app-members
+    [login]="login"
+    [organization]="{ name: organization.name ??  organization.login, link: organization.html_url }"
+  ></app-members>
+</div>

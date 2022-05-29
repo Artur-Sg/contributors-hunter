@@ -1,0 +1,16 @@
+<div class="dashboard">
+  <div class="dashboard__container">
+    <div class="dashboard__search-title" *ngIf="this.searchService.searchValue">
+      <h1>Search results for "{{ this.searchService.searchValue }}". Found {{ total }} organizations:</h1>
+    </div>
+    <app-item *ngFor="let organization of organizations" [orgDefinition]="organization"></app-item>
+  </div>
+  <div>
+    <mat-paginator
+      (page)="pageEvent($event)"
+      [pageIndex]="page - 1"
+      [pageSize]="organizations.length"
+      [length]="total"
+    ></mat-paginator>
+  </div>
+</div>

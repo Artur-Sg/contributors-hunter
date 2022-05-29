@@ -1,0 +1,47 @@
+<table mat-table [dataSource]="dataSource" class="favorites__table mat-elevation-z8">
+  <ng-container matColumnDef="avatar">
+    <th mat-header-cell *matHeaderCellDef>Avatar</th>
+    <td mat-cell *matCellDef="let element">
+      <img class="favorites__image" [src]="element.avatar_url" alt="Avatar" />
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="login">
+    <th mat-header-cell *matHeaderCellDef>Login</th>
+    <td mat-cell *matCellDef="let element">{{ element.login }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="github">
+    <th mat-header-cell *matHeaderCellDef>GitHub</th>
+    <td mat-cell *matCellDef="let element">
+      <a class="favorites__icon" [href]="element.html_url" title="{{ element.login }} GitHub account" target="_blank"
+        ><app-github-icon></app-github-icon
+      ></a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="organization">
+    <th mat-header-cell *matHeaderCellDef>Organization</th>
+    <td mat-cell *matCellDef="let element">
+      <a
+        class="favorites__link"
+        [href]="element.organization.link"
+        title="{{ element.organization.name }} GitHub account"
+        target="_blank"
+        >{{ element.organization.name }}</a
+      >
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element" class="member__actions">
+      <a *ngIf="element.is_favorite" mat-button color="warn" title="Remove from favorites" (click)="remove(element)"
+        >Remove from favorites</a
+      >
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

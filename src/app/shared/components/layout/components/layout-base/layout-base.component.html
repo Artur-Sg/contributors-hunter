@@ -1,0 +1,12 @@
+<app-layout-header class="layout-base__header">
+  <ng-container header-logo
+    ><span (click)="resetPage()" class="header__logo">CH - Contributors Hunter</span></ng-container
+  >
+  <ng-container search><app-search></app-search></ng-container>
+</app-layout-header>
+
+<app-layout-content>
+  <router-outlet></router-outlet>
+</app-layout-content>
+
+<app-layout-footer></app-layout-footer>
