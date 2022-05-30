@@ -23,14 +23,16 @@ export class ContributorsComponent implements OnChanges, OnDestroy {
 
   getContributors() {
     this.subscription = this.restApi.getContributors(this.url).subscribe((data: any[]) => {
-      this.dataSource = data.map(({ login, avatar_url, html_url, contributions }) => ({
-        login,
-        avatar_url,
-        html_url,
-        contributions,
-        organization: this.organization,
-        is_favorite: this.favoritesStorage.getItem({ key: 'login', val: login }) ? true : false,
-      }));
+      if (data && data.length) {
+        this.dataSource = data.map(({ login, avatar_url, html_url, contributions }) => ({
+          login,
+          avatar_url,
+          html_url,
+          contributions,
+          organization: this.organization,
+          is_favorite: this.favoritesStorage.getItem({ key: 'login', val: login }) ? true : false,
+        }));
+      }
     });
   }
 

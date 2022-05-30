@@ -12,7 +12,7 @@
 
   &__table {
     width: 90%;
-    margin: 2em auto 7em auto;
+    margin: 2em auto 7em;
   }
 
   &__icon {
@@ -28,6 +28,7 @@
   &__link {
     text-decoration: none;
     font-size: medium;
+
     &:hover {
       text-decoration: underline;
     }

@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   resetSearch() {
     this.value = '';
+    this.isExact = false;
     this.searchService.searchValue$.next({ value: this.value, isExact: this.isExact });
   }
 

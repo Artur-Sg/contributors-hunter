@@ -3,8 +3,7 @@
 
   &__container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: left;
     max-width: 75vw;
     height: 80vh;

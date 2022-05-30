@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    "no-empty-source": null,
+    "no-invalid-double-slash-comments": true,
+    "string-quotes": "single"
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoutePath } from '../../../../enums/route-path.enum';
 import { CurrentPageStorageService } from '../../../../services/current-page-storage/current-page-storage.service';
@@ -8,10 +8,8 @@ import { CurrentPageStorageService } from '../../../../services/current-page-sto
   templateUrl: './layout-base.component.html',
   styleUrls: ['./layout-base.component.scss'],
 })
-export class LayoutBaseComponent implements OnInit {
+export class LayoutBaseComponent {
   constructor(private router: Router, private pageStorage: CurrentPageStorageService) {}
-
-  ngOnInit() {}
 
   resetPage() {
     this.pageStorage.removeItem();
